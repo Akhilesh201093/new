@@ -1,6 +1,12 @@
 pipeline{
     agent any
     stages{
+     stage(\'env\') {
+                        steps {
+                            sh \'printenv\'
+                        }
+                    }
+    
         stage('code-pull'){
             steps{
                
@@ -17,5 +23,8 @@ cat README.md'''
                 
             }
         }
+        
+        
+        
     }
 }
