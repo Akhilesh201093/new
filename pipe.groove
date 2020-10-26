@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    stages{
+        stage('code-pull'){
+            steps{
+               
+               git credentialsId: '123', url: 'https://github.com/Akhilesh201093/new.git'
+                
+            }
+        }
+        stage('build'){
+            steps{
+               
+              echo 'hello'
+              sh '''ls
+cat README.md'''
+                
+            }
+        }
+    }
+}
